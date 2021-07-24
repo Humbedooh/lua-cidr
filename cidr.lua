@@ -21,7 +21,7 @@ Copyright© 2021, Daniel Gruno - humbedooh@apache.org
 ]]--
 
 --[[
-    cidr.lua - simple CIDR range checker for Lua 5.3+
+    cidr.lua - simple CIDR range checker for Lua 5.1+
 
     usage:
         local cidr = require 'cidr'

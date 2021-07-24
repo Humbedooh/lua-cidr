@@ -33,6 +33,21 @@ Copyright© 2021, Daniel Gruno - humbedooh@apache.org
     Works with both IPv4 and IPv6. Requires no bit library.
 ]]--
 
+
+-- Figure out bitwise ops
+local bor = nil
+local major,minor = _VERSION:match("Lua (%d+)%.(%d+)")
+major = tonumber(major)
+minor = tonumber(minor)
+if major == 5 and minor < 3 then
+    local bit = require 'bit'
+    bor = bit.bor
+elseif major > 5 or minor >= 3 then
+    -- hack to circumvent bad syntax when not 5.3+
+    bor = load("return function(a,b) return a|b end")()
+end
+
+
 local function add_range(l, p, part, base)
     l[p] = tonumber(part, base)
 end
@@ -99,7 +114,7 @@ local function network(self, cidr)
             if cidr_range < c_pos - 8 then
                 m = 8
             end
-            v = v | 2^m-1
+            v = bor(v, 2^m-1)
         end
         c_pos = c_pos + 8
         highest[k] = v

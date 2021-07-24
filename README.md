@@ -3,8 +3,9 @@ Simple CIDR block matching library for Lua 5.2+
 
 ## Usage:
 
-`cidr` works with both IPv4 and Ipv6, and requires no bit library to operate.
-All it needs is Lua 5.2 or above. LuaJIT should work fine as well.
+`cidr` works with both IPv4 and Ipv6.
+
+Requires the bitwise operator (`bitop`) library in order to work with Lua 5.2 or LuaJIT. When Lua 5.3, it uses the native bitwise operators.
 
 
 IPv4 example:

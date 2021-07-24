@@ -1,11 +1,11 @@
 # lua-cidr
-Simple CIDR block matching library for Lua 5.2+
+Simple CIDR block matching library for Lua 5.1 and above
 
 ## Usage:
 
 `cidr` works with both IPv4 and Ipv6.
 
-Requires the bitwise operator (`bitop`) library in order to work with Lua 5.2 or LuaJIT. When Lua 5.3, it uses the native bitwise operators.
+Requires the bitwise operator (`bitop`) library in order to work with Lua 5.1, 5.2 or LuaJIT. When Lua 5.3, it uses the native bitwise operators.
 
 
 IPv4 example:

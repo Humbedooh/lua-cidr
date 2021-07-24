@@ -47,11 +47,6 @@ elseif major > 5 or minor >= 3 then
     bor = load("return function(a,b) return a|b end")()
 end
 
-
-local function add_range(l, p, part, base)
-    l[p] = tonumber(part, base)
-end
-
 -- ip_raw: converts IPv4 and IPv6 to 8-bit tuples
 local function ip_raw(cidr, ipv6)
     local ip_struct = ipv6 and {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0} or {0,0,0,0}
